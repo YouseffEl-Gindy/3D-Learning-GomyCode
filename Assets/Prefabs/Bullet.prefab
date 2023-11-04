@@ -215,10 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed58c1f0f94c6574f9e2809bd761cdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10000
-  lifeTime: 3
   rgd: {fileID: 1590007240895625922}
   trail: {fileID: 6754436301173552474}
+  speed: 5000
+  lifeTime: 3
+  damage: 10
 --- !u!54 &1590007240895625922
 Rigidbody:
   m_ObjectHideFlags: 0

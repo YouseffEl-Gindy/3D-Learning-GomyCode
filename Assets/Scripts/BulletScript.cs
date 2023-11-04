@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
     #region Variables
     [SerializeField] float speed;
     [SerializeField] float lifeTime;
+    [SerializeField] float damage;
     float trailTime;
     #endregion
 
@@ -19,8 +20,13 @@ public class BulletScript : MonoBehaviour
         rgd.AddForce(dir * speed * Time.deltaTime, ForceMode.Impulse);
     }
    
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.transform.GetComponent<HealthManager>() != null)
+        {
+            other.transform.GetComponent<HealthManager>().TakeDamage(damage);
+            Debug.Log("HIT ZOMBIE");
+        }
         Reset();
     }
     public void Reset()

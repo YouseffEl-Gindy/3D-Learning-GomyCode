@@ -53,9 +53,6 @@ public class PlayerMove : MonoBehaviour
 
         moveDir = transform.right * xDir + transform.forward * yDir;
         rgd.velocity = moveDir * moveSpeed * Time.deltaTime;
-        //rgd.AddForce(moveDir.normalized * moveSpeed * 10f * Time.deltaTime, ForceMode.Force);
-        Debug.Log(rgd.velocity, this);
-
         //Solve infinite spinning issue
         rgd.angularVelocity = Vector3.zero;
 
